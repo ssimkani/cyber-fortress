@@ -27,6 +27,9 @@ st.markdown(
 #     notes_text = f.read()
 
 # === Code Editor with Line Numbers ===
+if "notes" not in st.session_state:
+    st.session_state["notes"] = ""
+
 notes = st_ace(
     value=st.session_state["notes"],
     language="text",
