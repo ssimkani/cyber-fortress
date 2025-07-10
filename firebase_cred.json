@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "cyberfortress-llm",
+  "private_key_id": "889a7d464e65bc361bcf90506d0a65aa9830ec17",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvwIBADANBgkqhkiG9w0BAQEFAASCBKkwggSlAgEAAoIBAQDjH84Swnl8l6lD\nGZmVoSnl8npYzOU9z3NPyDH2nfhFWlI66GbK6Mi92zXq/EgtzxOsZcMDiQnLasY3\nUW/spl0U2J+/w9urWhNbHMNsa6G1tcJeahl1JWnT25YzGo1EcoghsNuhXVAP1jK+\neXyeTeIxi3h6k4QqujP1+UO+xJnHsJGBBYqny+YDd+ws8R4KaTb9VAjO85G8gsOG\nYxp9+fXCawgY8jRWSm4D7n1wh3EACLdh1wmvfiXRzKGeqBUYuNAcH2LOJbTeXO60\nsxJzjn5PBhcoIgW/Xl8S3liOF8The3WSKc42J7KlQOW9CZXMwZ2QAIKKthZVPmgF\nZqUMO1lhAgMBAAECggEAJKrrVZsBCwzfHj6hTYdl4MJbXz/BGNAHoU9ERbjuLqAs\n22bOxZ58Xi5oT4YoTwD5/6C0MbtrkeQsmRy0MaQQLf/lFowTyF+z9Uc5A6WCx3fP\nJ/gAISoHolT2tExqlyzYbnwDkVMjzFK8AYVSiaowROhr7HopYc6K+gCin8dUvmik\nzbEOo/RYaA0sZv2dpIv489pZ90wL+CF/lQ3qDwq4AvJks1DLBHkAXbwp3PGNEVt9\nxA7Tv+UfCkITecMiiQxUtSAunuUb1746fbv7j8hvCe5JERDqUxsky7HnFmLYqamJ\nhXo5Mi2rhJ+dKn4SnvDWvAs4+kReFZxf2gPsh72Z2QKBgQD1r3UxnoJgp2Y2eIQe\nyPi5AoztbrbDEGQS/3SFXkHnVUrIBZISqUTQC492hCgtHbuYdlU89E2gO/ydXWyk\n9lAK1L+iEeYxBoY4Podz4XT7ZFxpCPmUhKsexY73XtGCv0AF8GIZLSoasky3xHSd\nXu5Zmr6oeYUG1lLrKMIbgGn1XQKBgQDsqNu+sXVB8QbMexgdwAPg9JB0K24+iSVp\nJjLY5XxjmjRUNp3JHTQmGaa9cGu/77EnZjZHPVDZOD71j1tL1jiURZ9ebWbTrfqW\nxDalN9B+a2k8Um23bpBdHE86RXmyWh5r2FKlNrL1Oj4W9WT52zCPE16Ycwea70jY\nyHgZ6pzP1QKBgQC0kojoN0BMGb0eO+WfWsaz9BPwTnc1V062R9s0StrVU/LqoG2E\nGbTh1B1VVjzRLBE9NXvgmQ6UvoIkhw3bEM4zp7pRPCab0dfEbvDPUt3QByuEZ3xI\nlFnQ/BLf7Wi/WCGOO+dd6bwQcwu/5Txwjd1RLlMDMI19QPkgrYw8+lzmYQKBgQCo\ncjwOjBLw/5SeQNNWgZCBMrIK7crHWii1ogm5FgamgmDSvBksx8uRftqOphEbiYjn\niToDFOKR6hXuBL6vyOd2qeOYe3ggHQpq+3gFuyd8hAlgdS9Ay8KXc4n06PSI/NoA\nWvXgQIG6SF1fTAU2TkxO2jOPgPidz8li+7V4hORejQKBgQCwo3f+KxDFwmGTBjgE\nqayx728fT+MwCqvApAVGoAEIirHCtXx+CFoEamOUpnW3Gy1tFMkZL+EcKQQnmuZN\nDO6zoshzZvDYNCZcXveog8FisIAQtc27T9mNbfvu8tOWT3Crfe/hnLU1bwcXf4Y9\nqnisvIi47HVGOw+VjDkbnRqwVw==\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-fbsvc@cyberfortress-llm.iam.gserviceaccount.com",
+  "client_id": "112741652545496893042",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40cyberfortress-llm.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

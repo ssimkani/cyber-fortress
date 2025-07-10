@@ -10,7 +10,7 @@ MODEL_NAME = "gemini-1.5-flash"
 
 # === FIREBASE Settings ===
 FIREBASE_API_KEY = st.secrets["FIREBASE_API_KEY"]
-FIREBASE_CRED = "utils/firebase_cred.json"
+FIREBASE_CRED = "firebase_cred.json"
 
 # === PINECONE Settings ===
 PINECONE_API_KEY = st.secrets["PINECONE_API_KEY"]
