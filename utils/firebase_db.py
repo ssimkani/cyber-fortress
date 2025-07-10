@@ -9,10 +9,15 @@ from utils.config import FIREBASE_CRED
 # Config
 firebase_cred = FIREBASE_CRED
 
-# Load service account key only once
-if not firebase_admin._apps:
-    cred = credentials.Certificate(firebase_cred)
-    firebase_admin.initialize_app(cred)
+@st.cache_resource
+def initialize_firebase():
+    if not firebase_admin._apps:
+        cred = credentials.Certificate(firebase_cred)
+        return firebase_admin.initialize_app(cred)
+    return firebase_admin.get_app()
+
+# Initialize immediately when this file is imported
+firebase_app = initialize_firebase()
 
 db = firestore.client()
 
