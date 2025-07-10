@@ -6,6 +6,7 @@ import time
 from utils.firebase_db import save_user_data
 from utils.vector_store import upsert_chunks
 from utils.split_text import split_text
+from utils.config import APP_TITLE
 
 
 # Block access if user is not logged in
@@ -15,7 +16,7 @@ if "uid" not in st.session_state:
     st.switch_page("login.py")
     st.stop()
 
-st.set_page_config(page_title="Notes", layout="wide")
+st.set_page_config(page_title=APP_TITLE, layout="wide")
 
 st.title("📝 Notes")
 st.markdown(
