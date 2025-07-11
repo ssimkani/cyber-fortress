@@ -60,18 +60,16 @@ if user_input := st.chat_input("Ask me anything..."):
     st.chat_message("user").write(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-    # RAG Search ===
-    with st.chat_message("assistant"):
-        # Show loading spinner
-        with st.spinner("Thinking..."):
-            # RAG: search
-            uid = st.session_state["uid"]
-            context_chunks = search_top_k(uid, user_input)
+    # RAG Search
+    with st.spinner("Thinking..."):
+        # RAG: search
+        uid = st.session_state["uid"]
+        context_chunks = search_top_k(uid, user_input)
 
-            # Build prompt and generate response
-            prompt = build_prompt(user_input, context_chunks)
-            response = generate_response(prompt, temperature=st.session_state["temperature"])
-            st.session_state.messages.append({"role": "assistant", "content": response})
+        # Build prompt and generate response
+        prompt = build_prompt(user_input, context_chunks)
+        response = generate_response(prompt, temperature=st.session_state["temperature"])
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
     # Source documents
     with st.expander("📚 Relevant Notes"):

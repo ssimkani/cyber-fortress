@@ -2,7 +2,7 @@
 import streamlit as st
 
 # === Embedding Model ===
-EMBEDDING_MODEL = "models/text-embedding-004"
+EMBEDDING_MODEL = "models/text-embedding-001"
 
 # === Model ===
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
