@@ -3,7 +3,6 @@ from utils.chat_helper import *
 from utils.embedder import *
 from utils.build_prompt import *
 from utils.config import *
-from utils.config import *
 import streamlit as st
 import time
 
@@ -29,8 +28,6 @@ if st.session_state.get("reset_chat", False):
 # Ensure messages is initialized if not set or was cleared above
 if "messages" not in st.session_state or not st.session_state["messages"]:
     st.session_state["messages"] = []
-
-# @st.cache_resource(ttl=30)
 
 # Add temp to session state
 if "temperature" not in st.session_state:

@@ -1,10 +1,7 @@
 import google.generativeai as genai
-from utils.config import GEMINI_API_KEY
 from utils.config import MODEL_NAME
 import streamlit as st
 import time
-
-genai.configure(api_key=GEMINI_API_KEY)
 
 llm = genai.GenerativeModel(MODEL_NAME)
 

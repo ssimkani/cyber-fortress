@@ -1,12 +1,14 @@
 # src/config.py
 import streamlit as st
-
+import google.generativeai as genai
 # === Embedding Model ===
 EMBEDDING_MODEL = "models/text-embedding-004"
 
 # === Model ===
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-MODEL_NAME = "gemini-1.5-flash"
+MODEL_NAME = "gemini-2.5-flash"
+
+genai.configure(api_key=GEMINI_API_KEY)
 
 # === FIREBASE Settings ===
 FIREBASE_API_KEY = st.secrets["FIREBASE_API_KEY"]
