@@ -1,6 +1,7 @@
 # pages/notes.py
 
 import streamlit as st
+from streamlit.runtime.caching import cache_data
 from streamlit_ace import st_ace
 import time
 from utils.firebase_db import save_user_data
@@ -23,9 +24,6 @@ st.markdown(
     "<style>" + open("./style/style_notes.css").read() + "</style>", unsafe_allow_html=True
 )
 
-# with open(get_notes_path(), "r", encoding="utf-8") as f:
-#     notes_text = f.read()
-
 # === Code Editor with Line Numbers ===
 if "notes" not in st.session_state:
     st.session_state["notes"] = ""
@@ -47,6 +45,9 @@ notes = st_ace(
 uid = st.session_state["uid"]
 if st.button("🔼 Save"):
     try:
+        # Clear cache to ensure fresh data
+        cache_data.clear() 
+        
         # Save notes
         st.session_state["notes"] = notes
         save_user_data(uid, notes)

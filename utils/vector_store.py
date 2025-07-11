@@ -38,7 +38,6 @@ def upsert_chunks(uid, chunks: list[str]):
         )
     index.upsert(vectors=vectors)
 
-
 def search_top_k(uid, query: str, k=NUM_CHUNKS) -> list[str]:
     query_vec = get_gemini_embedding(query)
     results = index.query(
