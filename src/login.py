@@ -5,7 +5,7 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 import streamlit as st
 import os
 import time
-from utils.firebase_auth import firebase_login, firebase_signup
+from utils.firebase_auth import *
 from utils.firebase_db import *
 from utils.config import *
 
