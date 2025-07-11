@@ -53,7 +53,6 @@ packaging==24.2
 pandas==2.3.1
 pillow==11.3.0
 pinecone==7.3.0
-pinecone-client==6.0.0
 pinecone-plugin-assistant==1.7.0
 pinecone-plugin-interface==0.0.7
 proto-plus==1.26.1
