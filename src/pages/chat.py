@@ -62,9 +62,6 @@ if user_input := st.chat_input("Ask me anything..."):
 
 # Add placeholder message first
 with st.chat_message("assistant"):
-    message_placeholder = st.empty()
-    message_placeholder.markdown("💭 Thinking...")
-
     # RAG Search
     # with st.spinner("Thinking..."):
         # RAG: search
