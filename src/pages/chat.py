@@ -57,10 +57,12 @@ for msg in st.session_state.messages:
 
 # Chat Input
 if user_input := st.chat_input("Ask me anything..."):
+    if not user_input.strip():
+        st.warning("⚠️ Please enter a message before submitting.")
+        st.stop()
     st.chat_message("user").write(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-# Add placeholder message first
 with st.chat_message("assistant"):
     # RAG Search
     # with st.spinner("Thinking..."):
