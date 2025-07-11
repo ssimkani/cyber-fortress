@@ -100,7 +100,7 @@ if st.sidebar.button("🆕 New Chat"):
 
 with st.sidebar:
     if st.button("🔓 Log Out"):
-        st.session_state["reset_chat"] = False
+        st.session_state["reset_chat"] = True
         for key in ["email", "uid", "id_token"]:
             st.session_state.pop(key, None)
         st.rerun()
