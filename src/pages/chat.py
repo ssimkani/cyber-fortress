@@ -63,28 +63,28 @@ if user_input := st.chat_input("Ask me anything..."):
     st.chat_message("user").write(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-with st.chat_message("assistant"):
-    # RAG Search
-    # with st.spinner("Thinking..."):
-        # RAG: search
-    uid = st.session_state["uid"]
-    timings = {}
-    
-    t0 = time.time()
-    context_chunks = search_top_k(uid, user_input)
-    timings["⚙️ embedder init"] = time.time() - t0
+    with st.chat_message("assistant"):
+        # RAG Search
+        # with st.spinner("Thinking..."):
+            # RAG: search
+        uid = st.session_state["uid"]
+        timings = {}
+        
+        t0 = time.time()
+        context_chunks = search_top_k(uid, user_input)
+        timings["⚙️ embedder init"] = time.time() - t0
 
-    # Build prompt and generate response
-    t1 = time.time()
-    prompt = build_prompt(user_input, context_chunks)
-    timings["📝 prompt build"] = time.time() - t1
-    
-    t2 = time.time()
-    response = generate_response(prompt, temperature=st.session_state["temperature"])
-    timings["🤖 response gen"] = time.time() - t2
+        # Build prompt and generate response
+        t1 = time.time()
+        prompt = build_prompt(user_input, context_chunks)
+        timings["📝 prompt build"] = time.time() - t1
+        
+        t2 = time.time()
+        response = generate_response(prompt, temperature=st.session_state["temperature"])
+        timings["🤖 response gen"] = time.time() - t2
 
-    timings["⏱️ total"] = sum(timings.values())
-    st.session_state.messages.append({"role": "assistant", "content": response})
+        timings["⏱️ total"] = sum(timings.values())
+        st.session_state.messages.append({"role": "assistant", "content": response})
 
     # Source documents
     with st.expander("📚 Relevant Notes"):
