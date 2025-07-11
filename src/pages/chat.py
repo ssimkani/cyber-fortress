@@ -90,11 +90,6 @@ if user_input := st.chat_input("Ask me anything..."):
                 unsafe_allow_html=True,
             )
 
-# Display timings
-    with st.expander("⏱️ Timings"):
-        for k, v in timings.items():
-            st.write(f"- **{k}**: {v:.2f} sec")
-
 # New Chat and Logout Buttons
 for _ in range(15):
     st.sidebar.write("")
@@ -105,6 +100,7 @@ if st.sidebar.button("🆕 New Chat"):
 
 with st.sidebar:
     if st.button("🔓 Log Out"):
+        st.session_state["reset_chat"] = False
         for key in ["email", "uid", "id_token"]:
             st.session_state.pop(key, None)
         st.rerun()
