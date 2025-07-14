@@ -70,13 +70,12 @@ if user_input := st.chat_input("Ask me anything..."):
             # RAG Search
             context_chunks = search_top_k(uid, user_input)
             prompt = build_prompt(user_input, context_chunks)
-            
+
             # Generate Response
             response = generate_response(prompt, temperature=st.session_state["temperature"])
 
     # Append to messages
     st.session_state.messages.append({"role": "assistant", "content": response})
-    st.rerun()
 
     # Source documents
     with st.expander("📚 Relevant Notes"):
