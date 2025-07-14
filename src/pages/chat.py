@@ -52,6 +52,11 @@ st.sidebar.markdown(
 # for msg in st.session_state.messages:
 #     st.chat_message(msg["role"]).write(msg["content"])
 
+# Previous Messages
+for i, msg in enumerate(st.session_state.messages):
+    with st.chat_message(msg["role"], key=f"hist-{i}"):
+        st.markdown(msg["content"])
+
 # Set uid
 uid = st.session_state["uid"]
 
@@ -65,7 +70,7 @@ if user_input := st.chat_input("Ask me anything..."):
     st.chat_message("user").write(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
 
-    with st.chat_message("assistant"):
+    with st.chat_message("assistant", key="live"):
         with st.spinner("Thinking..."):
             # RAG Search
             context_chunks = search_top_k(uid, user_input)
