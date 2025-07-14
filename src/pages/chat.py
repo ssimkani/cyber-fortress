@@ -76,6 +76,7 @@ if user_input := st.chat_input("Ask me anything..."):
 
     # Append to messages
     st.session_state.messages.append({"role": "assistant", "content": response})
+    st.rerun()
 
     # Source documents
     with st.expander("📚 Relevant Notes"):
