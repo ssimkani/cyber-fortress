@@ -7,17 +7,17 @@ llm = genai.GenerativeModel(MODEL_NAME)
 
 def generate_response(prompt: str, temperature) -> str:
 
-    response_container = st.empty()
+    # response_container = st.empty()
     response = llm.generate_content(prompt,
         generation_config=genai.GenerationConfig(
             temperature=temperature,
                                     ))
     response_text = response.text.strip()
 
-    # streaming output
-    with response_container:
-        for i in range(1, len(response_text) + 1):
-            st.markdown(response_text[:i] + "▌")
-            time.sleep(0.001)
-        st.markdown(response_text)
+    # # streaming output
+    # with response_container:
+    #     for i in range(1, len(response_text) + 1):
+    #         st.markdown(response_text[:i] + "▌")
+    #         time.sleep(0.001)
+    #     st.markdown(response_text)
     return response_text
