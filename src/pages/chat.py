@@ -52,30 +52,30 @@ st.sidebar.markdown(
 for msg in st.session_state.messages:
     st.chat_message(msg["role"]).write(msg["content"])
 
+# Set uid
+uid = st.session_state["uid"]
+
 # Chat Input
 if user_input := st.chat_input("Ask me anything..."):
     if not user_input.strip():
         st.warning("⚠️ Please enter a message before submitting.")
         st.stop()
+
+    # Show user message
     st.chat_message("user").write(user_input)
     st.session_state.messages.append({"role": "user", "content": user_input})
 
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
             # RAG Search
-            uid = st.session_state["uid"]
-
-            # Chunks to display as context
             context_chunks = search_top_k(uid, user_input)
-
-            # Build prompt and generate response
             prompt = build_prompt(user_input, context_chunks)
             
-            # Generate response
+            # Generate Response
             response = generate_response(prompt, temperature=st.session_state["temperature"])
 
-            # Append to messages
-            st.session_state.messages.append({"role": "assistant", "content": response})
+    # Append to messages
+    st.session_state.messages.append({"role": "assistant", "content": response})
 
     # Source documents
     with st.expander("📚 Relevant Notes"):
