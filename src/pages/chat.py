@@ -72,12 +72,13 @@ if user_input := st.chat_input("Ask me anything..."):
             prompt = build_prompt(user_input, context_chunks)
             response = generate_response(prompt, temperature=st.session_state["temperature"])
 
-            # Stream response
+            # Stream Response
             response_container = st.empty()
-            for i in range(1, len(response) + 1):
-                st.markdown(response[:i] + "▌")
-                time.sleep(0.001)
-            st.markdown(response)
+            with response_container:
+                for i in range(1, len(response) + 1):
+                    st.markdown(response[:i] + "▌")
+                    time.sleep(0.001)
+                st.markdown(response)
 
     # Append to messages
     st.session_state.messages.append({"role": "assistant", "content": response})
