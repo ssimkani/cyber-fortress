@@ -7,7 +7,7 @@ EMBEDDING_MODEL = "models/text-embedding-004"
 
 # GEMINI
 GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-MODEL_NAME = "gemini-2.5-flash-lite-preview-06-17"
+MODEL_NAME = "gemini-2.5-flash"
 
 genai.configure(api_key=GEMINI_API_KEY)
 
