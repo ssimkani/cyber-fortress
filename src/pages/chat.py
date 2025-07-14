@@ -48,10 +48,6 @@ st.sidebar.markdown(
     f"**Current Behavior:** {'🎯 Precise' if st.session_state["temperature"] < 0.4 else '🧠 Creative' if st.session_state["temperature"] > 0.6 else '⚖️ Balanced'}"
 )
 
-# Previous messages
-# for msg in st.session_state.messages:
-#     st.chat_message(msg["role"]).write(msg["content"])
-
 # Previous Messages
 for i, msg in enumerate(st.session_state.messages):
     with st.container():
