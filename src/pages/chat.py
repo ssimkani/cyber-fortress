@@ -29,25 +29,6 @@ if st.session_state.get("reset_chat", False):
 if "messages" not in st.session_state or not st.session_state["messages"]:
     st.session_state["messages"] = []
 
-# Add temp to session state
-if "temperature" not in st.session_state:
-    st.session_state["temperature"] = 0.3  # preferred default
-
-# === Sidebar: Temperature Slider ===
-st.sidebar.markdown("### 🤖 Model Behavior")
-st.session_state["temperature"] = st.sidebar.slider(
-    "Response Style\n\n(Precision ←→ Creativity)",
-    min_value=0.0,
-    max_value=1.0,
-    value=0.3,
-    step=0.05,
-    help="Lower = deterministic, higher = creative",
-)
-
-st.sidebar.markdown(
-    f"**Current Behavior:** {'🎯 Precise' if st.session_state["temperature"] < 0.4 else '🧠 Creative' if st.session_state["temperature"] > 0.6 else '⚖️ Balanced'}"
-)
-
 # Previous Messages
 for i, msg in enumerate(st.session_state.messages):
     with st.container():
@@ -72,7 +53,7 @@ if user_input := st.chat_input("Ask anything"):
             # RAG Search
             context_chunks = search_top_k(uid, user_input)
             prompt = build_prompt(user_input, context_chunks)
-            response = generate_response(prompt, temperature=st.session_state["temperature"])
+            response = generate_response(prompt)
 
     # Append to messages
     st.session_state.messages.append({"role": "assistant", "content": response})

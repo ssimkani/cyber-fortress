@@ -4,9 +4,9 @@ import streamlit as st
 
 llm = genai.GenerativeModel(MODEL_NAME)
 
-def generate_response(prompt: str, temperature) -> str:
+def generate_response(prompt: str) -> str:
     response = llm.generate_content(prompt,
-        generation_config=genai.GenerationConfig(temperature=temperature),
+        generation_config=genai.GenerationConfig(temperature=0.3),
         stream=True)
 
     response_container = st.empty()
