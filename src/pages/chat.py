@@ -58,7 +58,7 @@ for i, msg in enumerate(st.session_state.messages):
 uid = st.session_state["uid"]
 
 # Chat Input
-if user_input := st.chat_input("Ask me anything..."):
+if user_input := st.chat_input("Ask anything"):
     if not user_input.strip():
         st.warning("⚠️ Please enter a message before submitting.")
         st.stop()
