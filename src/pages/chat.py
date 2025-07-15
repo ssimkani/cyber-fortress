@@ -3,6 +3,7 @@ from utils.chat_helper import *
 from utils.embedder import *
 from utils.build_prompt import *
 from utils.config import *
+from utils.sidebar import render_sidebar
 import streamlit as st
 import time
 
@@ -15,24 +16,13 @@ if "uid" not in st.session_state:
     st.switch_page("login.py")
     st.stop()
 
+with st.sidebar:
+    render_sidebar()
+
 st.title(APP_TITLE)
 st.markdown(
     "<style>" + open("./style/style.css").read() + "</style>", unsafe_allow_html=True
 )
-
-with st.expander("## 🤖 What This Chatbot Does"):
-    st.markdown(
-    """
-    **Specializes in**:
-    - Cybersecurity reasoning and automation
-    - AWS infrastructure & scripting
-    - Cyber Fortress operations and technical command generation
-
-    It uses a Retrieval-Augmented Generation (RAG) system with Gemini 2.5 Flash to provide accurate, context-aware responses.  
-    ⚠️ All responses are in **code/script-only format**—no explanations or fluff.
-    """
-)
-
 
 # === Session State Initialization ===
 if st.session_state.get("reset_chat", False):
@@ -86,16 +76,16 @@ if user_input := st.chat_input("Ask anything"):
             )
 
 # New Chat and Logout Buttons
-for _ in range(15):
-    st.sidebar.write("")
+# for _ in range(15):
+#     st.sidebar.write("")
 
-if st.sidebar.button("🆕 New Chat"):
-    st.session_state["messages"] = []
-    st.rerun()
+# if st.sidebar.button("🆕 New Chat"):
+#     st.session_state["messages"] = []
+#     st.rerun()
 
-with st.sidebar:
-    if st.button("🔓 Log Out"):
-        st.session_state["reset_chat"] = True
-        for key in ["email", "uid", "id_token"]:
-            st.session_state.pop(key, None)
-        st.rerun()
+# with st.sidebar:
+#     if st.button("🔓 Log Out"):
+#         st.session_state["reset_chat"] = True
+#         for key in ["email", "uid", "id_token"]:
+#             st.session_state.pop(key, None)
+#         st.rerun()
