@@ -20,6 +20,20 @@ st.markdown(
     "<style>" + open("./style/style.css").read() + "</style>", unsafe_allow_html=True
 )
 
+with st.expander("## 🤖 What This Chatbot Does"):
+    st.markdown(
+    """
+    **Specializes in**:
+    - Cybersecurity reasoning and automation
+    - AWS infrastructure & scripting
+    - Cyber Fortress operations and technical command generation
+
+    It uses a Retrieval-Augmented Generation (RAG) system with Gemini 2.5 Flash to provide accurate, context-aware responses.  
+    ⚠️ All responses are in **code/script-only format**—no explanations or fluff.
+    """
+)
+
+
 # === Session State Initialization ===
 if st.session_state.get("reset_chat", False):
     st.session_state["messages"] = []

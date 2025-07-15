@@ -24,18 +24,19 @@ CHUNK_SIZE = 1500
 CHUNK_OVERLAP = 150
 NUM_CHUNKS = 4
 
-# System Prompt
+# Prompt Helpers
 SYSTEM_PROMPT = """
 You are a highly skilled cybersecurity expert in the 91st Cyber Brigade - Virginia National Guard.
 Your mission is to support Cyber Fortress force-on-force operations by generating scripts that automate offensive and defensive tasks.
+""".strip()
 
-Answer the query using these guidelines:
+DIRECTIVES = """Respond to the query using these rules:
 - Mirror the format of the provided examples: code-only outputs in fenced code blocks.
-- Assume user wants to generate a code snippet even if it is not explicitly stated
+- Assume the user is asking for a code-based solution, even if not explicitly stated.
 - Rely on the knowledge base and your cybersecurity expertise.
 - Output only the code/script(s)—no comments, explanations, or extra text.
-- Generate accurate responses and avoid Hallucinations.
-"""
+- Do not guess or hallucinate commands, parameters, or syntax. If uncertain, return an empty code block.
+""".strip()
 
 EXAMPLES = [
     {
@@ -47,8 +48,8 @@ EXAMPLES = [
         "answer": "```powershell\nGet-LocalGroupMember -Group 'Administrators'\n```"
     },
     {
-        "question": "Create a Bash script to monitor SSH login attempts from /var/log/auth.log.",
-        "answer": "```bash\ngrep 'sshd' /var/log/auth.log | grep 'Failed'\n```"
+        "question": "Write a Python function that extracts all IP addresses from a given log file.",
+        "answer": "```python\nimport re\n\ndef extract_ips(log_text):\n    return re.findall(r'\\b(?:[0-9]{1,3}\\.){3}[0-9]{1,3}\\b', log_text)\n```"
     }
 ]
 
