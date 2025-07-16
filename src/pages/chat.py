@@ -35,7 +35,7 @@ with st.sidebar:
         """
     )
 
-    for _ in range(30):
+    for _ in range(25):
         st.write("")
 
     if st.button("🆕 New Chat"):
