@@ -10,9 +10,6 @@ def build_prompt(query: str, context_chunks: list[str]):
     return f"""
 {SYSTEM_PROMPT}
 
-Task Context:
-{TASK_CONTEXT}
-
 Instructions:
 {DIRECTIVES}
 

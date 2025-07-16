@@ -3,7 +3,6 @@ from utils.chat_helper import *
 from utils.embedder import *
 from utils.build_prompt import *
 from utils.config import *
-from utils.sidebar import render_sidebar
 import streamlit as st
 import time
 
@@ -76,16 +75,30 @@ if user_input := st.chat_input("Ask anything"):
             )
 
 # New Chat and Logout Buttons
-# for _ in range(15):
-#     st.sidebar.write("")
 
-# if st.sidebar.button("🆕 New Chat"):
-#     st.session_state["messages"] = []
-#     st.rerun()
+with st.expander("## 🤖 What This Chatbot Does"):
+    st.markdown(
+    """
+    **Specializes in**:
+    - Cybersecurity reasoning and automation
+    - AWS infrastructure & scripting
+    - Cyber Fortress operations and technical command generation
 
-# with st.sidebar:
-#     if st.button("🔓 Log Out"):
-#         st.session_state["reset_chat"] = True
-#         for key in ["email", "uid", "id_token"]:
-#             st.session_state.pop(key, None)
-#         st.rerun()
+    It uses a Retrieval-Augmented Generation (RAG) system with Gemini 2.5 Flash to provide accurate, context-aware responses.  
+    ⚠️ All responses are in **code/script-only format**—no explanations or fluff.
+    """
+)
+
+for _ in range(20):
+    st.sidebar.write("")
+
+if st.sidebar.button("🆕 New Chat"):
+    st.session_state["messages"] = []
+    st.rerun()
+
+with st.sidebar:
+    if st.button("🔓 Log Out"):
+        st.session_state["reset_chat"] = True
+        for key in ["email", "uid", "id_token"]:
+            st.session_state.pop(key, None)
+        st.rerun()

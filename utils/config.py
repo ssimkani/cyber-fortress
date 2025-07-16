@@ -1,7 +1,6 @@
 # src/config.py
 import streamlit as st
 import google.generativeai as genai
-from utils.sidebar import render_sidebar
 
 # Embedding Model
 EMBEDDING_MODEL = "models/text-embedding-004"
@@ -30,15 +29,6 @@ SYSTEM_PROMPT = """
 You are a highly skilled cybersecurity expert in the 91st Cyber Brigade - Virginia National Guard.
 Your mission is to support Cyber Fortress force-on-force operations by generating code/scripts that automate offensive and defensive tasks.
 """.strip()
-
-task_context = render_sidebar()
-TASK_CONTEXT = f"""
-"Language": {task_context["language"]}
-"Task Type": {task_context["task_type"]}
-"Code Style": {task_context["code_style"]}
-"Output Format": {task_context["output_format"]}
-"Platform": {task_context["platform"]}
-"""
 
 DIRECTIVES = """Respond to the query using these rules:
 - Mirror the format of the provided examples: code-only outputs in fenced code blocks.
