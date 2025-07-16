@@ -15,9 +15,6 @@ if "uid" not in st.session_state:
     st.switch_page("login.py")
     st.stop()
 
-with st.sidebar:
-    render_sidebar()
-
 st.title(APP_TITLE)
 st.markdown(
     "<style>" + open("./style/style.css").read() + "</style>", unsafe_allow_html=True
@@ -74,8 +71,7 @@ if user_input := st.chat_input("Ask anything"):
                 unsafe_allow_html=True,
             )
 
-# New Chat and Logout Buttons
-
+# Sidebar
 with st.expander("## 🤖 What This Chatbot Does"):
     st.markdown(
     """
