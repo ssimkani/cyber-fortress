@@ -11,6 +11,6 @@ def generate_response(prompt: str) -> str:
 )
 
     # Generate Response
-    st.markdown(response.text)
+    st.markdown(response)
 
-    return response.text
+    return response
