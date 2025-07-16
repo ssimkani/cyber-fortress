@@ -21,7 +21,7 @@ st.markdown(
 )
 
 # Sidebar
-with st.sidebar():
+with st.sidebar:
     with st.expander("## 🤖 What This Chatbot Does"):
         st.markdown(
         """
@@ -36,18 +36,17 @@ with st.sidebar():
     )
 
     for _ in range(30):
-        st.sidebar.write("")
+        st.write("")
 
-    if st.sidebar.button("🆕 New Chat"):
+    if st.button("🆕 New Chat"):
         st.session_state["messages"] = []
         st.rerun()
 
-    with st.sidebar:
-        if st.button("🔓 Log Out"):
-            st.session_state["reset_chat"] = True
-            for key in ["email", "uid", "id_token"]:
-                st.session_state.pop(key, None)
-            st.rerun()
+    if st.button("🔓 Log Out"):
+        st.session_state["reset_chat"] = True
+        for key in ["email", "uid", "id_token"]:
+            st.session_state.pop(key, None)
+        st.rerun()
 
 
 # === Session State Initialization ===
