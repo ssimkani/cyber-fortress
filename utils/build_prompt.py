@@ -1,4 +1,4 @@
-from utils.config import SYSTEM_PROMPT, TASK_CONTEXT, EXAMPLES, DIRECTIVES
+from utils.config import SYSTEM_PROMPT, EXAMPLES, DIRECTIVES
 
 
 def build_prompt(query: str, context_chunks: list[str]):
