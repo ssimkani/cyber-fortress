@@ -56,6 +56,7 @@ with st.sidebar:
 # === Session State Initialization ===
 if st.session_state.get("reset_chat", False):
     st.session_state["messages"] = []
+    load_llm.clear()
     st.session_state["reset_chat"] = False
 
 # Ensure messages is initialized if not set or was cleared above
@@ -87,7 +88,7 @@ if user_input := st.chat_input("Ask anything"):
             context_chunks = search_top_k(uid, user_input)
             prompt = build_prompt(user_input, context_chunks)
             response = generate_response(prompt)
-
+            st.markdown(response)
     # Append to messages
     st.session_state.messages.append({"role": "assistant", "content": response})
 
