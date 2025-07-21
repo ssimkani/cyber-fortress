@@ -18,7 +18,7 @@ if "email" in st.session_state and "uid" in st.session_state:
     time.sleep(1)
     st.switch_page("pages/chat.py")
 
-st.title("🛡️ Cyber Fortress Login")
+st.title(APP_TITLE)
 
 mode = st.radio("Choose mode", ["Login", "Sign Up"], horizontal=True)
 email = st.text_input("Email")

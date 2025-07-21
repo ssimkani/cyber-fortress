@@ -1,4 +1,4 @@
-from utils.config import SYSTEM_PROMPT, EXAMPLES, DIRECTIVES
+from utils.config import SYSTEM_PROMPT
 
 
 def build_prompt(query: str, context_chunks: list[str]):
@@ -10,13 +10,7 @@ def build_prompt(query: str, context_chunks: list[str]):
     return f"""
 {SYSTEM_PROMPT}
 
-Instructions:
-{DIRECTIVES}
-
-Examples:
-{examples}
-
-Knowledge Base:
+Notes:
 {context}
 
 Query:
