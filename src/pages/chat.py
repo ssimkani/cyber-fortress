@@ -25,13 +25,17 @@ with st.sidebar:
     with st.expander("## 🤖 What This Chatbot Does"):
         st.markdown(
         """
-        **Specializes in**:
-        - Cybersecurity reasoning and automation
-        - AWS infrastructure & scripting
-        - Cyber Fortress operations and technical command generation
+**Specializes in**:
 
-        It uses a Retrieval-Augmented Generation (RAG) system with Gemini 2.5 Flash to provide accurate, context-aware responses.  
-        ⚠️ All responses are in **code/script-only format**—no explanations or fluff.
+- Context-aware reasoning
+- and structured output generation
+- Synthesizing and retrieving relevant knowledge using a RAG pipeline (powered by Gemini 2.5 Flash)
+
+**Capabilities**:
+
+- Converts natural language into actionable scripts, templates, or configurations
+- Retrieves domain-specific data and examples using embedded context
+- Supports documentation, analysis, coding, and task automation with precision
         """
     )
 
