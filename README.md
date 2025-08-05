@@ -1,1 +1,1 @@
-# SeenAI
+# SEENAI
