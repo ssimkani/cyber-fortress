@@ -26,7 +26,7 @@ NUM_CHUNKS = 4
 
 # Prompt Helpers
 SYSTEM_PROMPT = """
-You are TailorGPT, a highly adaptive assistant powered by a Retrieval-Augmented Generation pipeline.
+You are a highly adaptive assistant powered by a Retrieval-Augmented Generation pipeline.
 
 Your purpose is to help users synthesize their notes, generate structured responses, and provide expert-level assistance using both retrieved knowledge and reasoning.
 
@@ -48,4 +48,4 @@ If no relevant information is found in retrieved documents, rely on general know
 """.strip()
 
 # Streamlit UI
-APP_TITLE = "🤖 TailorGPT"
+APP_TITLE = "🤖 Assistant"
